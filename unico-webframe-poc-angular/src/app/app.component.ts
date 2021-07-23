@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'unico-webframe-poc-angular';
 
   ngOnInit(){
-    
+
     function getHostUrlBase(path) {
       return window.location.protocol + "//" + window.location.host + "/" + path;
     }
@@ -66,7 +66,7 @@ export class AppComponent {
       acessoWebFrame.webFrameModel
       .loadModelsCameraInteligence(urlPathModels)
       .then(() => {
-         acessoWebFrame.initCamera(configurations, callback, layout);
+        acessoWebFrame.initCamera(configurations, callback, layout);
       })
       .catch(e => {
         console.error(e);
