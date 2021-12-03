@@ -21,11 +21,11 @@
     "@angular/router": "~11.0.9",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "unico-webframe": "^0.0.4",
+    "unico-webframe": "^2.0.3",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1100.7",
+    "@angular-devkit/build-angular": "^0.1100.7",
     "@angular/cli": "~11.0.7",
     "@angular/compiler-cli": "~11.0.9",
     "@types/jasmine": "~3.6.0",

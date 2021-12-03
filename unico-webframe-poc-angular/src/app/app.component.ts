@@ -44,7 +44,6 @@ export class AppComponent {
           iconColor: "#fff",
         },
         popupLoadingHtml: `<div style="position: absolute; top: 45%; right: 50%; transform: translate(50%, -50%); z-index: 10; text-align: center;">Loading...</div>`,
-        popupOrientationHtml: `<div style="position: absolute; top: 45%; right: 50%; transform: translate(50%, -50%); z-index: 10; text-align: center;">Mantenha o celular no modo Portrait</div>`,
         boxMessage: {
           backgroundColor: "#2980ff",
           fontColor: "#fff"
@@ -55,23 +54,34 @@ export class AppComponent {
         }
       }
     
-      var configurations = {
-        TYPE: 2,
+      let configurations = {
+        TYPE: 1,
         optional: {
           FACE_MODE: 1,
           LABEL_DOCUMENT_TYPE_OTHERS: "doc",
         }
       }
+
+      //Câmera normal
+      //Type = 1 (Confira os tipos em nossa documentação)
+      //Não necessita carregar modelos
+      //configurations.TYPE = 1;
+      //acessoWebFrame.initCamera(configurations, callback, layout);
     
+      //Camera inteligente
+      //Type = 2 (Confira os tipos em nossa documentação)
+      configurations.TYPE = 2;
       acessoWebFrame.webFrameModel
       .loadModelsCameraInteligence(urlPathModels)
       .then(() => {
         acessoWebFrame.initCamera(configurations, callback, layout);
       })
-      .catch(e => {
+      .catch((e) => {
         console.error(e);
       });
     
+      //Document
+      //(Confira os tipos em nossa documentação)
       //acessoWebFrame.initDocument(configurations, callback, layout);
     });
   }
